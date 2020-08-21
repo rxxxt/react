@@ -1,16 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from "./Header";
+import Technologies from "./Technologies";
+import Footer from "./Footer";
 
 const App = () => {
     return (
-        <div className="App">
-            <ul>
-                <li>css</li>
-                <li>html</li>
-                <li>js</li>
-                <li>react</li>
-            </ul>
+        <div>
+            <Header/>
+            <Technologies/>
+            <Footer/>
         </div>
     );
 }
