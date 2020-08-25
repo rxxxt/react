@@ -1,16 +1,12 @@
 import React from 'react';
 import c from './Profile.module.css';
 import MyPost from "./MyPost/MyPost";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = () => {
     return (<div>
-        <div className={c.item}>
-            <img src='https://i.ytimg.com/vi/kdWwvE3wFaE/maxresdefault_live.jpg'/>
-        </div>
-        <div className={c.item}>
-            ava + description
-        </div>
-        <MyPost/>
+        <ProfileInfo />
+        <MyPost />
     </div>);
 }
 
