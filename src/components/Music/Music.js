@@ -1,9 +1,9 @@
 import React from 'react';
-import a from './Music.module.css';
+import c from './Music.module.css';
 
 const Music = () => {
     return (
-        <div>
+        <div className={c.music}>
             Music
         </div>
     );
