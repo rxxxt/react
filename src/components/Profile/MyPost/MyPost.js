@@ -1,16 +1,7 @@
 import React from 'react';
 import c from './MyPost.module.css';
-import Post from "./Post/Post";
 
 const MyPost = (props) => {
-
-    let posts = [
-        {id: 1, post: "Hi, how are you?", likeCounter: 15},
-        {id: 2, post: "My first post", likeCounter: 20}
-    ]
-
-    let postsElements = posts.map( p => <Post message={p.post} like={p.likeCounter}/>);
-
     return (
         <div className={c.postBlock}>
             <h3>My post</h3>
@@ -23,7 +14,7 @@ const MyPost = (props) => {
                 </div>
             </div>
             <div className={c.post}>
-                { postsElements }
+                { props.posts }
             </div>
         </div>
     );
