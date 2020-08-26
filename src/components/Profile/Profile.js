@@ -3,7 +3,7 @@ import c from './Profile.module.css';
 import MyPost from "./MyPost/MyPost";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-const Profile = () => {
+const Profile = (postsElements) => {
     return (<div>
         <ProfileInfo />
         <MyPost />
