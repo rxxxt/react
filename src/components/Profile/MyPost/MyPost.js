@@ -1,7 +1,11 @@
 import React from 'react';
 import c from './MyPost.module.css';
+import Post from "./Post/Post";
 
 const MyPost = (props) => {
+
+    let postsElements = props.posts.map(p => <Post message={p.post} like={p.likeCounter}/>);
+
     return (
         <div className={c.postBlock}>
             <h3>My post</h3>
@@ -14,7 +18,7 @@ const MyPost = (props) => {
                 </div>
             </div>
             <div className={c.post}>
-                { props.posts }
+                {postsElements}
             </div>
         </div>
     );
