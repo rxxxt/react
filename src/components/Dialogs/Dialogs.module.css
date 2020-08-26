@@ -8,14 +8,16 @@
 .dialogsItems a {
     color: white;
     text-decoration: none;
+    padding: 10px;
 }
 
 .dialogsItems .dialog {
     padding: 10px;
 }
 
-.messages {
-
+.dialog img {
+    width: 20px;
+    border-radius: 10px;
 }
 
 .messages .message {
