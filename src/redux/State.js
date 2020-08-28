@@ -1,3 +1,18 @@
+let store = {
+    __subscriber() {
+        console.log('no subscribers (observers)')
+    },
+    _state: {
+
+    },
+    getState() {
+        return this.state;
+    },
+    subscribe(observer) {
+        this._subscriber = observer;
+    }
+}
+
 let rerenderEntireTree = () => {
     console.log('State changed');
 }
