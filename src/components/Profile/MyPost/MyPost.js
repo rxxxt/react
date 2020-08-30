@@ -3,7 +3,7 @@ import c from './MyPost.module.css';
 import Post from "./Post/Post";
 
 const MyPost = (props) => {
-
+debugger;
     let postsElements = props.posts.map(p => <Post message={p.post} like={p.likeCounter}/>);
 
     let newPostElement = React.createRef();
