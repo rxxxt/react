@@ -3,9 +3,9 @@ import b from './Navbar.module.css';
 import {NavLink} from "react-router-dom";
 import Friends from "./../Friends/Friends";
 
-const Navbar = (props) => {
+const Navbar = () => {
 
-    let sidebarElements = props.state.friends.map(f => <Friends photo={f.photo} name={f.name} id={f.id}/>);
+  //  let sidebarElements = props.state.friends.map(f => <Friends photo={f.photo} name={f.name} id={f.id}/>);
 
     return (
         <nav className={b.nav}>
@@ -30,9 +30,9 @@ const Navbar = (props) => {
                 <div className={b.sideBar}>
                     <NavLink to='/friends' activeClassName={b.active}>
                         Friends
-                        <div>
+                      {/*  <div>
                             {sidebarElements}
-                        </div>
+                        </div>*/}
                     </NavLink>
                 </div>
             </div>
