@@ -7,7 +7,7 @@ const Dialogs = (props) => {
     let state = props.messagesPage;
     let dialogsElements = state.dialogs.map(d => <DialogItem photo={d.photo} name={d.name} id={d.id}/>);
     let messagesElements = state.messages.map(m => <Message message={m.message}/>);
-    let newMessageBody = state.newMessageBady;
+    let newMessageBody = state.newMessageBody;
 
     let onSensMessageClick = () => {
         props.sendMessage();
@@ -17,7 +17,6 @@ const Dialogs = (props) => {
         let body = e.target.value;
         props.updateNewMessageBody(body);
     }
-
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
@@ -27,10 +26,10 @@ const Dialogs = (props) => {
                 <div>{messagesElements}</div>
                 <div>
                     <div><textarea value={newMessageBody}
-                                   onChange={onNewMessageChange}
+                                   onChange={ onNewMessageChange }
                                    placeholder={'Enter your message'}/></div>
                     <div>
-                        <button onClick={onSensMessageClick}>Send</button>
+                        <button onClick={ onSensMessageClick }>Send</button>
                     </div>
                 </div>
             </div>
