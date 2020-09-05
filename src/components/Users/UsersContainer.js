@@ -3,9 +3,7 @@ import {connect} from "react-redux";
 import {
     follow, getUsers,
     setCurrentPage,
-    setTotalUsersCount,
-    setUsers, toggleFollowingProgress,
-    toggleIsFetching,
+    toggleFollowingProgress,
     unFollow
 } from "../../redux/users-reducer";
 import Users from "./Users";
@@ -50,10 +48,7 @@ let mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
     follow,
     unFollow,
-    setUsers,
     setCurrentPage,
-    setTotalUsersCount,
-    toggleIsFetching,
     toggleFollowingProgress,
     getUsers
 })(UsersContainer);
