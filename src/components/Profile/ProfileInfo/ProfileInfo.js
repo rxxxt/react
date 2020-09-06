@@ -10,9 +10,6 @@ const ProfileInfo = (props) => {
     return (
         <div>
             <ProfileStatus status="Hello my Friends"/>
-           {/* <div className={c.item}>
-                <img src='https://sun9-35.userapi.com/M9K-ZYqiyZlScM1k_sLis88eLKv-vHpCmrmgGg/JRr21OHal50.jpg'/>
-            </div>*/}
             <div className={c.descriptionBlock}>
                 <img src={props.profile.photos.large}/>
                 ava + description
