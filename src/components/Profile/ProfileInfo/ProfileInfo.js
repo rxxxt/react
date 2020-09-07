@@ -8,11 +8,12 @@ const ProfileInfo = (props) => {
     if (!props.profile) {
         return <Preloader />
     }
+    window.profile = props.profile;
     return (
         <div>
             <div className={c.descriptionBlock}>
                 <img src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto}/>
-                ava + description
+                {props.profile.fullName}
             </div>
             <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
         </div>

@@ -1,4 +1,4 @@
-import {profileAPI, usersAPI} from "../api/api";
+import {profileAPI} from "../api/api";
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
@@ -45,26 +45,30 @@ export const setStatus = (status) => ({type: SET_STATUS, status})
 
 export const setProfile = (userId) => {
     return (dispatch) => {
-        usersAPI.setProfile(userId)
+        profileAPI.getProfile(userId)
             .then(response => {
                 dispatch(setUsersProfile(response.data));
             });
     }
 }
 
-export const getUserStatus = (userId) => (dispatch) => {
-    profileAPI.getStatus(userId)
-        .then(response => {
-            dispatch(setStatus(response.data));
-        });
+export const getUserStatus = (userId) => {
+    return (dispatch) => {
+        profileAPI.getStatus(userId)
+            .then(response => {
+                dispatch(setStatus(response.data));
+            });
+    }
 }
 
-export const updateStatus = (status) => (dispatch) => {
-    profileAPI.updateStatus(status)
-        .then(response => {
-            if (response.data.resultCode === 0)
-            dispatch(setStatus(status));
-        });
+export const updateStatus = (status) => {
+    return (dispatch) => {
+        profileAPI.updateStatus(status)
+            .then(response => {
+                if (response.data.resultCode === 0)
+                    dispatch(setStatus(status));
+            });
+    }
 }
 
 export default profileReducer;
