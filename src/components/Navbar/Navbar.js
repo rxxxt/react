@@ -1,12 +1,7 @@
-import React from 'react';
-import b from './Navbar.module.css';
-import {NavLink} from 'react-router-dom';
-import Friends from './../Friends/Friends';
-
+import React from "react";
+import b from "./Navbar.module.css";
+import {NavLink} from "react-router-dom";
 const Navbar = () => {
-
-  //  let sidebarElements = props.state.friends.map(f => <UsersApiComponents photo={f.photo} name={f.name} id={f.id}/>);
-
     return (
         <nav className={b.nav}>
             <div className={b.item}>
@@ -27,14 +22,6 @@ const Navbar = () => {
                 </div>
             </div>
             <div className={b.item}>
-                <div className={b.sideBar}>
-                    <NavLink to='/friends' activeClassName={b.active}>
-                        Friends
-                      {/*  <div>
-                            {sidebarElements}
-                        </div>*/}
-                    </NavLink>
-                </div>
                 <div className={b.item}>
                     <NavLink to='/users' activeClassName={b.active}>Users</NavLink>
                 </div>
