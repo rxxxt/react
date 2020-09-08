@@ -1,7 +1,7 @@
 import React from "react";
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {getUserStatus, setProfile, setUsersProfile, updateStatus} from "../../redux/profile-reducer";
+import {getUserStatus, setProfile, updateStatus} from "../../redux/profile-reducer";
 import {withRouter} from "react-router-dom";
 import {compose} from "redux";
 
@@ -10,7 +10,9 @@ class ProfileContainer extends React.Component {
         let userId = this.props.match.params.userId;
         if (!userId && this.props.isAuth) {
             userId = this.props.authorizedUserId;
-        }
+        } if (!userId) {
+                this.props.history.push("/login");
+            }
         this.props.setProfile(userId);
         this.props.getUserStatus(userId);
     }
@@ -31,6 +33,6 @@ let mapStateToProps = (state) => ({
 })
 
 export default compose(
-    connect(mapStateToProps, {setUsersProfile, setProfile, getUserStatus, updateStatus}),
+    connect(mapStateToProps, {setProfile, getUserStatus, updateStatus}),
     withRouter
 )(ProfileContainer);
