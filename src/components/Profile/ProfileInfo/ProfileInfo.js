@@ -4,17 +4,17 @@ import Preloader from "../../common/preloader/preloader";
 import userPhoto from "../../../assets/img/userPhoto.png";
 import ProfileStatus from "./ProfileStatus";
 
-const ProfileInfo = (props) => {
-    if (!props.profile) {
+const ProfileInfo = ({profile, status, updateStatus}) => {
+    if (!profile) {
         return <Preloader />
     }
     return (
         <div>
             <div className={c.descriptionBlock}>
-                <img src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto}/>
-                {props.profile.fullName}
+                <img src={profile.photos.large != null ? profile.photos.large : userPhoto}/>
+                {profile.fullName}
             </div>
-            <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+            <ProfileStatus status={status} updateStatus={updateStatus}/>
         </div>
     );
 }
