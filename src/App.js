@@ -5,15 +5,16 @@ import {withRouter, Route} from "react-router-dom";
 import Music from "./components/Music/Music";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
-import DialogsContainer from "./components/Dialogs/DialogsContainer";
-import UsersContainer from "./components/Users/UsersContainer";
-import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
-import Login from "./components/Login/Login";
 import {connect} from "react-redux";
 import {compose} from "redux";
 import {initialize} from "./redux/app-reducer";
 import Preloader from "./components/common/preloader/preloader";
+import {withSuspense} from "./hoc/withSuspense";
+const Login = React.lazy(() => import('./components/Login/Login'));
+const UsersContainer = React.lazy(() => import('./components/Users/UsersContainer'));
+const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
+const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
 
 class App extends React.Component {
     componentDidMount() {
@@ -30,13 +31,13 @@ class App extends React.Component {
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Route path='/login'
-                           render={() => <Login/>}/>
+                           render={withSuspense(Login)}/>
                     <Route path='/dialogs'
-                           render={() => <DialogsContainer/>}/>
+                           render={withSuspense(DialogsContainer)}/>
                     <Route path='/profile/:userId?'
-                           render={() => <ProfileContainer/>}/>
+                           render={withSuspense(ProfileContainer)}/>
                     <Route path='/users'
-                           render={() => <UsersContainer/>}/>
+                           render={withSuspense(UsersContainer)}/>
                     <Route path='/news' component={News}/>
                     <Route path='/music' component={Music}/>
                     <Route path='/settings' component={Settings}/>
