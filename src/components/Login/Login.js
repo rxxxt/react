@@ -7,16 +7,17 @@ import {connect} from "react-redux";
 import {login, logout} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
 
-const maxLength20 = maxLengthCreator(20);
+const maxLength50 = maxLengthCreator(50);
 
 const LoginForm = ({handleSubmit, error}) => {
     return (
         <form onSubmit={handleSubmit}>
             <div>
-                <Field placeholder={"Email"} validate={[required, maxLength20]} name={"email"} component={Input}/>
+                <Field placeholder={"Email"} validate={[required, maxLength50]} name={"email"} component={Input}/>
             </div>
             <div>
-                <Field placeholder={"Password"} validate={[required, maxLength20]} name={"password"} type={"password"} component={Input}/>
+                <Field placeholder={"Password"} validate={[required, maxLength50]} name={"password"} type={"password"}
+                       component={Input}/>
             </div>
             <div>
                 <Field component={Input} name={"rememberMe"} type={"checkbox"}/>remember me
