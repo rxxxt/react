@@ -1,4 +1,4 @@
-import * as axios from 'axios';
+import * as axios from "axios";
 
 const instance = axios.create({
     withCredentials: true,
@@ -20,10 +20,6 @@ export const usersAPI = {
     },
     follow(id) {
         return instance.post(`follow/${id}`, {})
-    },
-    setProfile(userId) {
-        console.warn('Obsolete method.Please profileAPI object.');
-        return profileAPI.getProfile(userId);
     }
 }
 
@@ -35,7 +31,7 @@ export const profileAPI = {
         return instance.get(`profile/status/` + userId);
     },
     updateStatus(status) {
-        return instance.put(`profile/status`, { status });
+        return instance.put(`profile/status`, {status});
     },
     savePhoto(file) {
         const formData = new FormData();
